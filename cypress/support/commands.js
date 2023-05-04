@@ -19,6 +19,7 @@ Cypress.Commands.add(
 			cy.get('#email').type(username);
 			cy.get('#password').type(password, { log: false });
 			cy.contains('button', 'Login').click();
+			cy.contains('h1', 'Your Notes').should('be.visible');
 		};
 
 		if (cacheSession) {
@@ -28,10 +29,6 @@ Cypress.Commands.add(
 		}
 	}
 );
-
-// cypress/support/commands.js
-
-// Outros comands aqui ...
 
 const attachFileHandler = () => cy.get('#file').attachFile('example.json');
 
