@@ -1,4 +1,4 @@
-// authenticatedScenarios.spec.js
+/// <reference path="../support/commands.d.ts" />
 
 describe('Scenarios where authentication is a pre-requirement', () => {
 	beforeEach(() => {
@@ -34,7 +34,7 @@ describe('Scenarios where authentication is a pre-requirement', () => {
 		});
 	});
 
-	it('logs out', () => {
+	it('logs out', { tags: '@desktop-and-tablet' }, () => {
 		cy.visit('/');
 		cy.wait('@getNotes');
 		if (
